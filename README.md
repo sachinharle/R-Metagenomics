@@ -1,2 +1,2 @@
 # R-Metagenomics
-Codes adopted from many online Tutorials
+Codes adopted and reformed from online Tutorials
