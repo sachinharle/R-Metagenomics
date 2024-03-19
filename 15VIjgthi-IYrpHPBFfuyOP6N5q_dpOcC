@@ -1,0 +1,5 @@
+update.packages(checkBuilt=TRUE, ask=FALSE)
+mypks <- pacman::p_lib()
+saveRDS(mypks, "~/mypks.rds")
+mypks <- readRDS("~/mypks.rds")
+install.packages(mypks)

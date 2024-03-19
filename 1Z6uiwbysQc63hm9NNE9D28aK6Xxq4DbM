@@ -1,0 +1,15 @@
+library(tidyverse)
+library(fs)
+library(purrr)
+#read all tsv files in a folder
+##usage
+#data <- merge_tsv("folderpath","matching_column")
+merge_tsv <- function(path,samplegroup){
+  samplelist <- map(dir_ls(path), read_tsv)
+  samplegroup <- Reduce(function(x, y) merge(x, y, by= samplegroup, all=TRUE), samplelist)  
+}
+#read all csv files in a folder
+merge_csv <- function(path,samplegroup){
+  samplelist <- map(dir_ls(path), read_csv)
+  samplegroup <- Reduce(function(x, y) merge(x, y, by= samplegroup, all=TRUE), samplelist)  
+}
